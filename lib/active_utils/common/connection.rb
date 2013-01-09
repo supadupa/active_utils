@@ -93,6 +93,7 @@ module ActiveMerchant
       return unless endpoint.scheme == "https"
 
       http.use_ssl = true
+      http.ssl_version = 'SSLv3'  # => for all comms to use SSLv3
 
       if verify_peer
         http.verify_mode = OpenSSL::SSL::VERIFY_PEER
